@@ -1,0 +1,35 @@
+.default-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10rem;
+}
+
+.default-cart p {
+    font-size: 2rem;
+}
+
+.default-cart a {
+    background-color: #E64A19;
+    padding: .5rem 1rem .5rem;
+    margin: 1rem;
+    font-size: 2.3rem;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.default-cart a:active {
+    padding: .4rem .9rem .4rem;
+    background-color: #BF360C;
+    margin-top: 1.1rem;
+    color: #E0E0E0;
+}
+
+.cart-items-container {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-row-gap: 1rem;
+}
+

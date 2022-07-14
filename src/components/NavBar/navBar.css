@@ -1,0 +1,32 @@
+.containernav {
+    margin: 0 0 1rem;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: space-around;
+    background-color: #009688;
+    font-size: 2rem;
+    list-style: none;
+}
+
+.nav__list li {
+    padding: .3rem;
+}
+
+.nav__link {
+    color: #FFCA28;
+    text-decoration: none;
+}
+
+.coloricon {
+    color: #C62828;
+}
+
+.nav__link:hover {
+    color: #FFFF00 
+}
+
+.nav__link:active {
+    color: #FF9800;
+}

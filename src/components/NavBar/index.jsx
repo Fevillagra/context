@@ -1,17 +1,18 @@
 import React from "react";
 import CartWidget from "../CartWidget";
 import { NavLink } from "react-router-dom";
+import './navBar.css';
 
 const NavBar = () => {
 	return (
-		<div className="container">
+		<div className="containernav">
 			<nav className="nav">
-				<div className="nav__brand">
-					<NavLink className="nav__link" to="/">
-						MiMarca
-					</NavLink>
-				</div>
 				<ul className="nav__list">
+					<li>
+						<NavLink className="nav__link" to="/">
+							<p>Flamovie's <i className="fa-solid fa-fire coloricon"></i></p>
+						</NavLink>
+					</li>
 					<li>
 						<NavLink className="nav__link" to="/categoria/films">
 							Películas
