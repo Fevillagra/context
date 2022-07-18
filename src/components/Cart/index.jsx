@@ -7,10 +7,12 @@ import './cart.css';
 const Cart = () => {
 	const { cart, totalPrice, clearCart } = useCartContext();
 
+	
+
 	if (cart.length === 0) {
 		return (
 			<div className="default-cart">
-				<p>Todavía hay elementos en el carrito</p>
+				<p>Todavía no hay elementos en el carrito</p>
 				<Link to='/'>Hacer compras</Link>
 			</div>
 		);
