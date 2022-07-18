@@ -41,3 +41,10 @@
     width: fit-content;
     padding: 0 1rem;
 }
+
+.cart-clear {
+    width:fit-content;
+    margin: auto;
+    font-size: 1.3rem;
+    padding: .3rem;
+}
