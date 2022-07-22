@@ -1,0 +1,8 @@
+.cartWidget-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.cartWidget-count {
+    margin: 0 1rem;
+}
