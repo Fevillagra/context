@@ -4,6 +4,7 @@ import { useCartContext } from "../../context/CartContext";
 import ItemCart from '../ItemCart';
 import './cart.css';
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import Swal from 'sweetalert2';
 
 const Cart = () => {
 	const { cart, totalPrice, clearCart } = useCartContext();
@@ -28,6 +29,13 @@ const Cart = () => {
 		const db = getFirestore();
 		const ordersCollection = collection(db, "orders");
 		addDoc(ordersCollection, order).then(({ id }) => console.log(id));
+		clearCart();
+
+		Swal.fire(
+		'Compra realizada!',
+		'Su compra ha sido realizada con éxito!',
+		'success'
+		)
 	};
 
 
