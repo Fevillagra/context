@@ -26,6 +26,12 @@ const Cart = () => {
 	};
 
 	const handleClick = () => {
+		order.buyer.name = document.getElementById('fname').value;
+		order.buyer.email = document.getElementById('fmail').value;
+		order.buyer.phone = document.getElementById('fphone').value;
+		order.buyer.address = document.getElementById('faddress').value;
+		
+
 		const db = getFirestore();
 		const ordersCollection = collection(db, "orders");
 		addDoc(ordersCollection, order).then(({ id }) => console.log(id));
@@ -57,8 +63,29 @@ const Cart = () => {
 			<p className="total">
 				Total: ${totalPrice()}
 			</p>
-			<button onClick={() => clearCart()} className="cart-clear">Limpiar Carrito</button>
-			<button onClick={() => handleClick()} className="cart-clear">Emitir compra</button>
+
+			<form className="cart-form">
+				<div>
+					<label for="fname">Nombre:</label>
+					<input type="text"  id="fname" className="name"/>
+				</div>
+				<div>
+					<label for="fmail">Email:</label>
+					<input type="email" id="fmail" className="email"/>
+				</div>
+				<div>
+					<label for="fphone">Télefono:</label>
+					<input type="tel" id="fphone" className="phone"/>
+				</div>
+				<div>
+					<label for="faddress">Dirección:</label>
+					<input type="text" id="faddress" className="address"/>
+				</div>
+				<input type="button" value="Emitir compra" className="cart-clear" onClick={() => handleClick()}/>
+			</form>
+
+			{/* {<button onClick={() => clearCart()} className="cart-clear">Limpiar Carrito</button>
+			<button onClick={() => handleClick()} className="cart-clear">Emitir compra</button>} */}
 		</div>
 		</>
 	)

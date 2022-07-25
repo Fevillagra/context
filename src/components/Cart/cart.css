@@ -48,3 +48,35 @@
     font-size: 1.3rem;
     padding: .3rem;
 }
+
+/* FORMULARIO */
+
+.cart-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-form div {
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+.cart-form div input {
+    font-size: 2rem;
+}
+
+.name {
+    margin-left: 29px;
+}
+
+.email {
+    margin-left: 59px;
+}
+
+.phone {
+    margin-left: 20px;
+}
+
+.address {
+    margin-left: 10px;
+}
