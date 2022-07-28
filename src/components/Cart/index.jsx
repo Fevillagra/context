@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useCartContext } from "../../context/CartContext";
 import ItemCart from '../ItemCart';
@@ -9,12 +9,37 @@ import Swal from 'sweetalert2';
 const Cart = () => {
 	const { cart, totalPrice, clearCart } = useCartContext();
 
+	const [newName, setNewName] = useState('');
+	const [newEmail, setNewEmail] = useState('');
+	const [newTel, setNewTel] = useState('');
+	const [newDir, setNewDir] = useState('');
+
+	const nameHandler = (event) => {
+		setNewName(event.target.value);
+	}
+
+	const emailHandler = (event) => {
+		setNewEmail(event.target.value);
+	}
+
+	const telHandler = (event) => {
+		setNewTel(event.target.value);
+	}
+
+	const dirHandler = (event) => {
+		setNewDir(event.target.value);
+	}
+
+	// const submitHandler = (event) => {
+	// 	event.preventDefault();
+	// }
+
 	const order = {
 		buyer: {
-			name: "mm",
-			email: "mm@gmail.com",
-			phone: "123123",
-			address: "asdd",
+			name: newName,
+			email: newEmail,
+			phone: newTel,
+			address: newDir,
 		},
 		items: cart.map((product) => ({
 			id: product.id,
@@ -26,12 +51,6 @@ const Cart = () => {
 	};
 
 	const handleClick = () => {
-		order.buyer.name = document.getElementById('fname').value;
-		order.buyer.email = document.getElementById('fmail').value;
-		order.buyer.phone = document.getElementById('fphone').value;
-		order.buyer.address = document.getElementById('faddress').value;
-		
-
 		const db = getFirestore();
 		const ordersCollection = collection(db, "orders");
 		addDoc(ordersCollection, order).then(({ id }) => console.log(id));
@@ -64,24 +83,49 @@ const Cart = () => {
 				Total: ${totalPrice()}
 			</p>
 
-			<form className="cart-form">
+			<form className="cart-form" onSubmit={() => handleClick()}>
 				<div>
-					<label for="fname">Nombre:</label>
-					<input type="text"  id="fname" className="name"/>
+					<label htmlFor="fname">Nombre:</label>
+					<input 
+					type="text"  
+					id="fname" 
+					className="name" 
+					value={newName} 
+					required 
+					onChange={nameHandler}/>
 				</div>
 				<div>
-					<label for="fmail">Email:</label>
-					<input type="email" id="fmail" className="email"/>
+					<label htmlFor="fmail">Email:</label>
+					<input 
+					type="email" 
+					id="fmail" 
+					className="email"
+					value={newEmail} 
+					required 
+					onChange={emailHandler}/>
 				</div>
 				<div>
-					<label for="fphone">Télefono:</label>
-					<input type="tel" id="fphone" className="phone"/>
+					<label htmlFor="fphone">Télefono:</label>
+					<input 
+					type="tel" 
+					id="fphone" 
+					className="phone"
+					value={newTel}
+					required 
+					onChange={telHandler}/>
 				</div>
 				<div>
-					<label for="faddress">Dirección:</label>
-					<input type="text" id="faddress" className="address"/>
+					<label htmlFor="faddress">Dirección:</label>
+					<input 
+					type="text" 
+					id="faddress" 
+					className="address" 
+					value={newDir}
+					required 
+					onChange={dirHandler}/>
 				</div>
-				<input type="button" value="Emitir compra" className="cart-clear" onClick={() => handleClick()}/>
+				<input type="submit" value="Emitir compra" className="cart-clear"/>
+				<button onClick={() => clearCart()} className="cart-clear">Limpiar Carrito</button>
 			</form>
 
 			{/* {<button onClick={() => clearCart()} className="cart-clear">Limpiar Carrito</button>
