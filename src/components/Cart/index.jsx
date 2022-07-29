@@ -53,14 +53,21 @@ const Cart = () => {
 	const handleClick = () => {
 		const db = getFirestore();
 		const ordersCollection = collection(db, "orders");
-		addDoc(ordersCollection, order).then(({ id }) => console.log(id));
+		
+		
+		addDoc(ordersCollection, order).then(({ id }) => {
+			console.log(id);
+			Swal.fire(
+				'Compra realizada!',
+				`
+				ID de compra: ${id}
+				`,
+				'success'
+				)
+		});
 		clearCart();
 
-		Swal.fire(
-		'Compra realizada!',
-		'Su compra ha sido realizada con éxito!',
-		'success'
-		)
+
 	};
 
 
