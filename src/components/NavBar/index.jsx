@@ -10,7 +10,7 @@ const NavBar = () => {
 				<ul className="nav__list">
 					<li>
 						<NavLink className="nav__link" to="/">
-							<p>Flamovie's <i className="fa-solid fa-fire coloricon"></i></p>
+							<p>Firemovie's <i className="fa-solid fa-fire coloricon"></i></p>
 						</NavLink>
 					</li>
 					<li>

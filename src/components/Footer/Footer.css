@@ -1,0 +1,91 @@
+.footer {
+    margin-top: 1rem;
+    padding: 3rem 2rem;
+    background-color: #000;
+    color: #FAFAFA;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0 3rem;
+    border-bottom: 1px solid #FAFAFA;
+}
+
+/* Primera columna */
+.footer__content--main h3 {
+    font-size: 1.5rem;
+}
+
+.footer__content--main h3 {
+    font-size: 1.5rem;
+}
+
+/* Columna 2,3,4*/
+.footer__content--divlist h3 {
+    font-size: 1.2rem;
+    margin: 0 0 1rem;
+}
+
+.footer__content--divlist ul {
+    list-style: none;
+}
+
+.footer__content--divlist li {
+    margin: 0 0 0.2rem;
+}
+
+.footer__content--divlist a {
+    text-decoration: none;
+    color: #FAFAFA;
+}
+
+.footer__content--divlist a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #CD6155;
+}
+
+/* Div redes */
+
+.footer__media {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.footer__media--div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #FAFAFA;
+    border-radius: 50%;
+    margin: 0 .2rem;
+}
+
+.footer__media--div:hover {
+    border: 2px solid #B71C1C;
+}
+
+.footer__media--div:hover > a i {
+    color: #B71C1C;
+}
+
+
+.footer__media a {
+    text-decoration: none;
+    color: #FAFAFA;
+}
+
+.footer__media i {
+    text-decoration: none;
+    color: #FAFAFA;
+    font-size: 2rem;
+}
+
+/* Div copyright */
+.footer__copy {
+    text-align: center;
+}
